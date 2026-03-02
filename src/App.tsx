@@ -6,10 +6,9 @@ import todosFromServer from './api/todos';
 
 import { TodoList } from './components/TodoList';
 import { Todo } from './Types/Todo';
-import { set } from 'cypress/types/lodash';
 
 const getUserById = (userId: number) => {
-  const user = usersFromServer.find(user => user.id === userId);
+  const user = usersFromServer.find(person => person.id === userId);
 
   if (!user) {
     throw new Error(`User with id ${userId} not found`);
